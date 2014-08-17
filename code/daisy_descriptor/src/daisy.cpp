@@ -90,7 +90,7 @@ daisy::daisy()
 
    // [added] - 2013-03-30
    y_flag_use_precomputed_normalized_histogram = false;
-
+   // [END added]
 }
 
 daisy::~daisy()
@@ -876,7 +876,7 @@ void daisy::set_workspace_memory( float* workspace, long int w_size )
 // [added] - by yhs
 void daisy::PrecomputeNormalizedHistogram()
 {
-	y_stored_norm_histogram = allocate<float>(m_h*m_w, (m_rad_q_no+1)*m_hist_th_q_no*2);
+	y_stored_norm_histogram = allocate<float>(m_h*m_w, (m_rad_q_no+1)*m_hist_th_q_no*2); // store 2 copies
 	y_flag_use_precomputed_normalized_histogram = true;
 	int iy, ix, ir;
 	for (iy=0; iy<m_h; ++iy)
@@ -982,8 +982,9 @@ void daisy::ClearPrecomputeNormalizedHistogram()
 	deallocate<float>(y_stored_norm_histogram, m_h*m_w);
 }
 
-#include "../Program_Control_Header.h"
+#include "../../Program_Control_Header.h"
 
+// calculate difference cost on the fly of extracting descriptors
 float daisy::ExtractAndCalculateTheDistanceFromNormalizedHistogram( float *des1, double y, double x, int orientation )
 {
 	double shift = m_orientation_shift_table[orientation];
@@ -1046,6 +1047,7 @@ float daisy::GetAndCalculateTheDistanceWithShiftedNormalizedHistogram( float *hi
 	float tmp = 0.0;
 	if (is_outside(x, 0, m_w-1, y, 0, m_h-1))
 	{
+		// many options to handling boundary
 		//return 1e6;
 
 		_mm_prefetch((char *)hist1, _MM_HINT_NTA);
@@ -1106,7 +1108,7 @@ float daisy::GetAndCalculateTheDistanceWithShiftedNormalizedHistogram( float *hi
 	}
 }
 
-
+// [END added]
 
 
 
