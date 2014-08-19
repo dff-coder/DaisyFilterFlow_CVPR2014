@@ -998,8 +998,8 @@ float daisy::ExtractAndCalculateTheDistanceFromNormalizedHistogram( float *des1,
 	// remember to memset to zero in caller function
 	float *descriptor = des1;
 	float totalCost = 0.0;
-#if USE_NEW_TRUNCATED_HISTOGRAM
-	totalCost += min<float>(NEW_TRUNCATED_HISTOGRAM_L1_THRESHOLD, GetAndCalculateTheDistanceWithShiftedNormalizedHistogram(descriptor, iy, ix, 0, ishift));
+#if USE_TRUNCATED_HISTOGRAM
+	totalCost += min<float>(TRUNCATED_HISTOGRAM_L1_THRESHOLD, GetAndCalculateTheDistanceWithShiftedNormalizedHistogram(descriptor, iy, ix, 0, ishift));
 #else
 	totalCost += GetAndCalculateTheDistanceWithShiftedNormalizedHistogram(descriptor, iy, ix, 0, ishift);
 #endif
@@ -1025,8 +1025,8 @@ float daisy::ExtractAndCalculateTheDistanceFromNormalizedHistogram( float *des1,
 			histogram = descriptor+region*m_hist_th_q_no;
 			//ni_get_histogram( histogram, iy, ix, ishift, m_smoothed_gradient_layers+g_selected_cubes[r]*m_cube_size );
 			//GetShiftedNormalizedHistogram(histogram, iy, ix, r, ishift);
-#if USE_NEW_TRUNCATED_HISTOGRAM
-			totalCost += min<float>(NEW_TRUNCATED_HISTOGRAM_L1_THRESHOLD, GetAndCalculateTheDistanceWithShiftedNormalizedHistogram(histogram, iy, ix, r, ishift));
+#if USE_TRUNCATED_HISTOGRAM
+			totalCost += min<float>(TRUNCATED_HISTOGRAM_L1_THRESHOLD, GetAndCalculateTheDistanceWithShiftedNormalizedHistogram(histogram, iy, ix, r, ishift));
 #else
 			totalCost += GetAndCalculateTheDistanceWithShiftedNormalizedHistogram(histogram, iy, ix, r, ishift);
 #endif
