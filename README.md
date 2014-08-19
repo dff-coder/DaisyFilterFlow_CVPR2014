@@ -3,6 +3,8 @@ DaisyFilterFlow_CVPR2014
 
 This repo would contain the main code of daisy filter flow which is published in CVPR 2014. Please check it later after Aug 2014. 
 
+Paper Website: [https://sites.google.com/site/daisyfilterflowcvpr2014/](https://sites.google.com/site/daisyfilterflowcvpr2014/)
+
 ## Usage
 - The essential code is under the `code` folder
 - For windows user, see `sample_executable` folder for a sample usage. (Runtime DLLs are included)
