@@ -4,7 +4,6 @@
 #include "Program_Control_Header.h"
 
 #include "Image_Video_Capture_Header.h"
-#include "Normalize_Mat_to_Show_Header.h"
 #include "OpenCV_Tickcount_Header.h"
 #include "Scan_File_Header.h"
 
