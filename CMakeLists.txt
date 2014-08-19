@@ -46,7 +46,7 @@ endif(MSVC)
 
 
 add_executable(Daisy_Filter_Flow
-	./code/example_DaisyFilterFlow_main.cpp
+	./sample_executable/example_DaisyFilterFlow_main.cpp
 	${DAISY_DESCRIPTOR}
 	${FILTER_FILE}
 	${SUPERPIXEL_FILE}
