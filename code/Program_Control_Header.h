@@ -1,0 +1,62 @@
+#ifndef __PROGRAM_CONTROL_HEADER
+#define __PROGRAM_CONTROL_HEADER
+// debug switch
+#define OUTPUT_INFO_TIME 0
+#define TEST_DEBUG_INTERMEDIATE_RESULT 0
+
+// filter option
+// cross-based multi-point filter
+#define USE_CLMF0_TO_AGGREGATE_COST 0
+#define USE_CLMF1_TO_AGGREGATE_COST 0
+// guided image filter
+#define USE_GF_TO_FILTER_COST 1
+// box filter, like patch wise descriptor matching
+#define USE_BOXFILTER_TO_AGGREGATE_COST 0
+// no filter is applied, worked like per descriptor matching
+#define NO_AGGREGATE_COST 0
+
+// [added] - 2013-03-06, for sift flow
+#define USE_COLOR_FEATURES 0
+#define USE_ENHANCED_DAISY_FLOW_FEATURES 1
+#define DAISY_FEATURE_LAYERS 2
+#define DAISY_FEATURE_LENGTH 136
+
+#define USE_FLOW_NONLOCAL_PROPAGATION 1
+// [added] - 2013-03-30, use zero flow to initialize the daisy flow map
+#define USE_ZERO_FLOW_INITIALIZATION 1
+
+// [added] - 2013-04-04, sample ratio
+#define ORIENTATION_SAMPLE_RATIO 1.1
+#define SCALE_SAMPLE_RATIO 1.1
+
+// [added] - 2013-04-05, truncated cost
+#define TRUNCATED_L2_THRESHOLD 0.018*DAISY_FEATURE_LENGTH
+#define USE_TRUNCATED_L2_DISTANCE 0
+#define USE_L2_ERROR_DISTANCE 0
+
+#define TRUNCATED_L1_THRESHOLD 0.065*DAISY_FEATURE_LENGTH
+#define USE_TRUNCATED_L1_DISTANCE 0
+#define USE_L1_ERROR_DISTANCE 1
+
+#define TRUNCATED_HISTOGRAM_L1_THRESHOLD 15.0/(DAISY_FEATURE_LENGTH/8)
+#define USE_TRUNCATED_HISTOGRAM 1
+
+//
+#define SUPERPIXELS_VISITED_LABELLIST 1
+#define DO_USE_HASHTABLE_TO_RECORD_VISTED_FLOW 0
+
+#define DO_DISPARITY_SORTED_LIST_FILTER 1
+#define DO_DISPARITY_SINGLE_FILTER 0
+
+#define WINDOW_CURRENT_FLOW_LEFT "Curr_Flow_Left"
+#define WINDOW_CURRENT_FLOW_RIGHT "Curr_Flow_Right"
+
+#define WINDOW_FW_FORWARD_WARPING_DST "FW_FW_DST_Img"
+#define WINDOW_FW_REVERSE_WARPING_SRC "FW_RE_SRC_Img"
+#define WINDOW_BW_FORWARD_WARPING_DST "BW_FW_DST_Img"
+#define WINDOW_BW_REVERSE_WARPING_SRC "BW_RE_SRC_Img"
+
+#define WINDOW_ERROR_EE_IMG "EE_Error_Img"
+#define WINDOW_ERROR_AE_IMG "AE_Error_Img"
+
+#endif
