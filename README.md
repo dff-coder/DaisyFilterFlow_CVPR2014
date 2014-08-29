@@ -4,7 +4,7 @@ DaisyFilterFlow_CVPR2014
 This repo contains the main code of daisy filter flow which is published in CVPR 2014. ~~Please check it later after Aug 2014.~~
 
 - v.1 - Aug 2014
-  > A guided filter enabled version is provided. 
+  - A guided filter enabled version is provided. 
 
 Paper Website: [https://sites.google.com/site/daisyfilterflowcvpr2014/](https://sites.google.com/site/daisyfilterflowcvpr2014/)
 
@@ -19,10 +19,10 @@ Paper Website: [https://sites.google.com/site/daisyfilterflowcvpr2014/](https://
 - The parameters related to filtering method should be adjusted for the data, e.g. kernel size, epsl of GF, color tau fr CLMF0, CLMF1 (support would be added in the future update), etc.
 - Raw cost function should be noticed: L1 or L2 distance, truncated value, truncated way.
 - The other key parameters has relatively little effect but still should be noticed:
-  - Number of associated affinity neighbour superpixels
+	- Number of associated affinity neighbour superpixels
 	- The sampling decreased ratio alpha for scale, orientation, translation 
 	- The sampling range in scale, orientation
-  - About daisy descriptors computing: convolved histogram sampled layers, the way to handling boundary of image, descriptor size, descriptor sampling layers, etc.
+	- About daisy descriptors computing: convolved histogram sampled layers, the way to handling boundary of image, descriptor size, descriptor sampling layers, etc.
 
 ## Dependency
 - OpenCV > 2.3+, [http://opencv.org/](http://opencv.org/)  
