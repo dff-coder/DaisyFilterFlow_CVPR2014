@@ -16,7 +16,7 @@ Paper Website: [https://sites.google.com/site/daisyfilterflowcvpr2014/](https://
 ## Parameters Tuning Guideline
 - **First of all**, please refer to both [Daisy Filter Flow](https://sites.google.com/site/daisyfilterflowcvpr2014/) and [Patchmatch Filter](https://sites.google.com/site/daisyfilterflowcvpr2014/) papers for the meaning and strategy of each used parameters. 
 - Set superpixels number or size accordingly to image size. Current setting (superpixel size = 300) is good for typical images of 320*240. It's not sensitive but could be important for the converge speed and performance.
-- The parameters related to filtering method should be adjusted for the data, e.g. kernel size, epsl of GF, color tau fr CLMF0, CLMF1 (support would be added in the future update), etc.
+- The parameters related to filtering method should be adjusted for the data, e.g. kernel size, epsl of GF, color tau for CLMF0, CLMF1 (support would be added in the future update), etc.
 - Raw cost function should be noticed: L1 or L2 distance, truncated value, truncated way.
 - The other key parameters has relatively little effect but still should be noticed:
 	- Number of associated affinity neighbour superpixels
