@@ -1249,7 +1249,7 @@ void SuperPatchmatch::RunDaisyFilterFlow( cv::Mat_<cv::Vec2f> &flowResult)
 		for (ix = 0; ix<widthRight; ++ix)
 		{
 			bestRightDaisyFlow[iy][ix][2] = 0;
-			bestRightDaisyFlow[iy][ix][3] = (MAX_ORIENTATION_LEVEL - 1) / 2;;
+			bestRightDaisyFlow[iy][ix][3] = (MAX_ORIENTATION_LEVEL - 1) / 2;
 		}
 	}
 
