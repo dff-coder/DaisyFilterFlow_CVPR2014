@@ -39,6 +39,7 @@
 //////////////////////////////////////////////////////////////////////////
 
 #include <iostream>
+#include <algorithm>
 #include "daisy/daisy.h"
 
 using namespace std;

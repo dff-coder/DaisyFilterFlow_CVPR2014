@@ -1235,6 +1235,24 @@ void SuperPatchmatch::RunDaisyFilterFlow( cv::Mat_<cv::Vec2f> &flowResult)
 	bestLeftDaisyFlow.create(heightLeft, widthLeft);
 	bestRightDaisyFlow.create(heightRight, widthRight);
 
+	// explicit initialize scale and orientation to zero to avoid error
+	for (iy = 0; iy<heightLeft; ++iy)
+	{
+		for (ix = 0; ix<widthLeft; ++ix)
+		{
+			bestLeftDaisyFlow[iy][ix][2] = 0;
+			bestLeftDaisyFlow[iy][ix][3] = (MAX_ORIENTATION_LEVEL - 1) / 2;
+		}
+	}
+	for (iy = 0; iy<heightRight; ++iy)
+	{
+		for (ix = 0; ix<widthRight; ++ix)
+		{
+			bestRightDaisyFlow[iy][ix][2] = 0;
+			bestRightDaisyFlow[iy][ix][3] = (MAX_ORIENTATION_LEVEL - 1) / 2;;
+		}
+	}
+
 	// [added] - 2012-11-07
 	double tmpSubSum = CalculateSumOfSubImages(subImageLeft);
 	printf("Left Sub-Image Total = %.0f, Overhead Ratio = %.4f\n", tmpSubSum, tmpSubSum/(widthLeft*heightLeft));
