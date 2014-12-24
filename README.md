@@ -5,6 +5,7 @@ This repo contains the main code of daisy filter flow which is published in CVPR
 
 - v.1 - Aug 2014
   - A guided filter enabled version is provided. 
+  - **note:** our run-time measurement and results reported in paper was using CLMF filters. The CLMF-0 gives similar quality to GF, but runs 2x faster. It would be added later.
 
 Paper Website: [https://sites.google.com/site/daisyfilterflowcvpr2014/](https://sites.google.com/site/daisyfilterflowcvpr2014/)
 
